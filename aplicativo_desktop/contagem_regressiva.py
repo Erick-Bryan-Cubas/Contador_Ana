@@ -1,6 +1,8 @@
 import datetime
 import tkinter as tk
 import sys
+import os
+import pygame
 
 # Define a target date for the countdown
 data_alvo = datetime.datetime(2023, 9, 7)
@@ -8,7 +10,7 @@ data_alvo = datetime.datetime(2023, 9, 7)
 def calcular_tempo_restante():
     tempo_atual = datetime.datetime.now()
     tempo_restante = data_alvo - tempo_atual
-    return tempo_restante 
+    return tempo_restante
 
 def atualizar_contagem_regressiva(label_detalhada, label_hora):
     tempo_restante = calcular_tempo_restante()
@@ -35,6 +37,8 @@ def atualizar_contagem_regressiva(label_detalhada, label_hora):
     label_hora.after(1000, lambda: atualizar_contagem_regressiva(label_detalhada, label_hora))
 
 def criar_interface():
+    pygame.init()
+
     janela = tk.Tk()
     janela.title("❤️Contagem Regressiva Para Te Ver❤️")
     
@@ -47,22 +51,26 @@ def criar_interface():
     frame_detalhada = tk.Frame(janela, relief="groove")
     frame_detalhada.pack(pady=1)
 
-    label_detalhada = tk.Label(frame_detalhada, font=fonte_detalhada, padx=20, pady=20, bg='#e63946', fg='white' )
+    label_detalhada = tk.Label(frame_detalhada, font=fonte_detalhada, padx=20, pady=20, bg='#e63946', fg='white')
     label_detalhada.pack()
 
     frame_hora = tk.Frame(janela, bd=5, relief="groove", bg='black')
     frame_hora.pack(pady=10)
 
-    label_hora = tk.Label(frame_hora, font=fonte_hora, bg='white', fg='#e63946',bd=2, relief="groove", padx=20, pady=20)
+    label_hora = tk.Label(frame_hora, font=fonte_hora, bg='white', fg='#e63946', bd=2, relief="groove", padx=20, pady=20)
     label_hora.pack()
 
     atualizar_contagem_regressiva(label_detalhada, label_hora)
+
+    caminho_musica = os.path.join("C:\\Users\\thecu\\Área de Trabalho\\Projetos\\Contador_Maria\\aplicativo_desktop\\music\\floating-cat.mp3")
+
+    pygame.mixer.music.load(caminho_musica)
+    pygame.mixer.music.play(-1)
 
     janela.mainloop()
 
 if __name__ == "__main__":
     if getattr(sys, "frozen", False):
-        # O script foi convertido em um executável (via PyInstaller).
         criar_interface()
     else:
         criar_interface()
