@@ -24,7 +24,7 @@ def atualizar_contagem_regressiva(label_detalhada, label_hora):
         horas, remainder = divmod(remainder, 3600)
         minutos, segundos = divmod(remainder, 60)
 
-        mensagem_detalhada = "Faltam {} dias, {} horas, {} minutos e {} segundos, meu Pãozinho de mel 🍯".format(dias, horas, minutos, segundos)
+        mensagem_detalhada = "Faltam {} dias, {} horas, {} minutos e {} segundos, meu Lírio 🌸".format(dias, horas, minutos, segundos)
         label_detalhada.config(text=mensagem_detalhada)
 
         total_horas = total_seconds // 3600
