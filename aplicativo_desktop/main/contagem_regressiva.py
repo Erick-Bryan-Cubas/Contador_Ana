@@ -8,6 +8,7 @@ import pygame
 
 caminho_usuario = os.environ['USERPROFILE']
 musicas = [
+    "the_scientist.mp3",
     "01 - Sorriso Maroto - Eu Topo - Ao Vivo.mp3",
     "02 - Sorriso Maroto, Belo - 100 Likes - Ao Vivo.mp3",
     "03 - Sorriso Maroto, Dilsinho - 50 Vezes - Ao Vivo.mp3",
