@@ -4,6 +4,11 @@ import sys
 import os
 import pygame
 
+caminho_usuario = os.environ['USERPROFILE']
+musica = 'floating-cat.mp3'
+caminho_musica = os.path.join(caminho_usuario, 'Área de Trabalho', 'Projetos', 'Contador_Maria', 'aplicativo_desktop', 'music', musica)
+
+
 # Define a target date for the countdown
 data_alvo = datetime.datetime(2023, 9, 7)
 
@@ -61,9 +66,7 @@ def criar_interface():
     label_hora.pack()
 
     atualizar_contagem_regressiva(label_detalhada, label_hora)
-
-    caminho_musica = os.path.join("C:\\Users\\thecu\\Área de Trabalho\\Projetos\\Contador_Maria\\aplicativo_desktop\\music\\floating-cat.mp3")
-
+    
     pygame.mixer.music.load(caminho_musica)
     pygame.mixer.music.play(-1)
 
