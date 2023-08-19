@@ -98,6 +98,11 @@ def prev_song():
     musica_index = (musica_index - 1) % len(musicas)
     pygame.mixer.music.load(os.path.join(caminho_usuario, 'Área de Trabalho', 'Projetos', 'Contador_Maria', 'aplicativo_desktop', 'music', musicas[musica_index]))
     pygame.mixer.music.play()
+    
+def atualizar_nome_musica(label_musica):
+    nome_musica = os.path.splitext(musicas[musica_index])[0]
+    label_musica.config(text=nome_musica)
+    label_musica.after(2000, lambda: atualizar_nome_musica(label_musica))
 
 def criar_interface():
     pygame.init()
@@ -136,6 +141,13 @@ def criar_interface():
 
     next_button = ttk.Button(button_frame, text="⏭️ Next", command=next_song, style="TButton")
     next_button.grid(row=0, column=3, padx=10)
+    
+    # Cria uma label para exibir o nome da música
+    label_nome_musica = tk.Label(janela, font=("Helvetica", 16), bg='#e63946', fg='white')
+    label_nome_musica.pack()
+    
+    # Inicia a atualização do nome da música
+    atualizar_nome_musica(label_nome_musica)
 
     janela.mainloop()
 
