@@ -6,9 +6,7 @@ import pygame
 
 caminho_usuario = os.environ['USERPROFILE']
 musica = 'floating-cat.mp3'
-pooh = 'pooh.gif'
 caminho_musica = os.path.join(caminho_usuario, 'Área de Trabalho', 'Projetos', 'Contador_Maria', 'aplicativo_desktop', 'music', musica)
-caminho_gif = os.path.join(caminho_usuario, 'Área de Trabalho', 'Projetos', 'Contador_Maria', 'aplicativo_desktop', 'images', pooh)
 
 # Define a target date for the countdown
 data_alvo = datetime.datetime(2023, 9, 7)
@@ -40,23 +38,15 @@ def criar_interface():
     janela = tk.Tk()
     janela.title("❤️Contagem Regressiva Para Te Ver❤️")
     
-    # Carregar e exibir o GIF
-    imagem_pooh = tk.PhotoImage(file=caminho_gif)
-    gif_label = tk.Label(janela, image=imagem_pooh, bg='#ffc300')
-    gif_label.pack()
-    
-    # Definir o tamanho da janela para o tamanho do GIF
-    janela.geometry("{}x{}".format(imagem_pooh.width(), imagem_pooh.height()))
-
     # Alterando a cor de fundo
-    janela.configure(bg='#ffc300')
+    janela.configure(bg='#e63946')
     
     fonte_detalhada = ("Helvetica Bold", 16)
 
     frame_detalhada = tk.Frame(janela, relief="groove")
     frame_detalhada.pack(pady=1)
 
-    label_detalhada = tk.Label(frame_detalhada, font=fonte_detalhada, padx=20, pady=20, bg='#ffc300', fg='white')
+    label_detalhada = tk.Label(frame_detalhada, font=fonte_detalhada, padx=20, pady=20, bg='#e63946', fg='white')
     label_detalhada.pack()
 
     atualizar_contagem_regressiva(label_detalhada)
