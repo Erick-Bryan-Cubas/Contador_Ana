@@ -17,5 +17,5 @@ Este é um programa de contador regressivo que foi criado com amor para expressa
 Para tornar o programa em um executável, você pode usar o PyInstaller. Primeiro, instale o PyInstaller usando o seguinte comando:
 
 ```bash
-pyinstaller --onefile --add-data "src/app/music/*:music" src/app/contagem_regressiva.py
+pyinstaller --onefile --add-data "src/app/music/*:src/app/music" src/app/contagem_regressiva.py
 ```

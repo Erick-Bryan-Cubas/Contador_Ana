@@ -24,7 +24,7 @@ musicas = [
 ]
 
 musica_index = 0
-caminho_musica = resource_path(os.path.join('music', musicas[musica_index]))
+caminho_musica = resource_path(os.path.join('src', 'app', 'music', musicas[musica_index]))
 
 data_alvo = datetime.datetime(2024, 7, 6)
 
@@ -58,13 +58,13 @@ def pause_music():
 def next_song():
     global musica_index
     musica_index = (musica_index + 1) % len(musicas)
-    pygame.mixer.music.load(resource_path(os.path.join('music', musicas[musica_index])))
+    pygame.mixer.music.load(resource_path(os.path.join('src', 'app', 'music', musicas[musica_index])))
     pygame.mixer.music.play()
 
 def prev_song():
     global musica_index
     musica_index = (musica_index - 1) % len(musicas)
-    pygame.mixer.music.load(resource_path(os.path.join('music', musicas[musica_index])))
+    pygame.mixer.music.load(resource_path(os.path.join('src', 'app', 'music', musicas[musica_index])))
     pygame.mixer.music.play()
 
 def atualizar_nome_musica(label_musica):

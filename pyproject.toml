@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "contador-ana"
+version = "1.0.0"
+description = "Contador regressivo para expressar os sentimentos em direção a uma parceira"
+authors = ["Erick Bryan Cubas <thecubas@outlook.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+DateTime = "^5.5"
+ttkthemes = "^3.2.2"
+pygame = "^2.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
