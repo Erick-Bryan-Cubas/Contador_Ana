@@ -11,3 +11,11 @@ Este é um programa de contador regressivo que foi criado com amor para expressa
 **Mensagem de Carinho**: Uma mensagem carinhosa é exibida junto com a contagem regressiva, criando um clima romântico enquanto a data especial se aproxima.
 
 **Trilha Sonora**: Uma trilha sonora adicionada em "music", com player de músicas.
+
+## Torne o programa em executável
+
+Para tornar o programa em um executável, você pode usar o PyInstaller. Primeiro, instale o PyInstaller usando o seguinte comando:
+
+```bash
+pyinstaller --onefile --add-data "src/app/music/*:music" src/app/contagem_regressiva.py
+```
