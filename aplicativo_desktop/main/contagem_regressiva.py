@@ -8,57 +8,16 @@ import pygame
 
 caminho_usuario = os.environ['USERPROFILE']
 musicas = [
-    "the_scientist.mp3",
-    "01 - Sorriso Maroto - Eu Topo - Ao Vivo.mp3",
-    "02 - Sorriso Maroto, Belo - 100 Likes - Ao Vivo.mp3",
-    "03 - Sorriso Maroto, Dilsinho - 50 Vezes - Ao Vivo.mp3",
-    "04 - Sorriso Maroto - Dependente - Ao Vivo.mp3",
-    "05 - Sorriso Maroto - Lua de Mel_Brigas por Nada_1 Metro e 65 - Ao Vivo.mp3",
-    "06 - Sorriso Maroto - Faz Assim.mp3",
-    "07 - Sorriso Maroto - Clichê - Live.mp3",
-    "08 - Sorriso Maroto - Reprise - Ao Vivo.mp3",
-    "09 - Sorriso Maroto - A Primeira Namorada.mp3",
-    "10 - Sorriso Maroto - Sinais - Live.mp3",
-    "11 - Sorriso Maroto - Não Tem Perdão.mp3",
-    "12 - Sorriso Maroto - Vai e Chora - Ao Vivo.mp3",
-    "13 - Sorriso Maroto - Eu Vacilei_Preciso Viver_Nada de Pensar Em Despedida - Ao Vivo.mp3",
-    "14 - Sorriso Maroto - Chave e Cadeado.mp3",
-    "15 - Sorriso Maroto - Fica Combinado Assim.mp3",
-    "16 - Sorriso Maroto - Futuro Prometido.mp3",
-    "17 - Sorriso Maroto, Jorge & Mateus - Guerra Fria (feat. Jorge & Mateus).mp3",
-    "18 - Sorriso Maroto - O Impossível.mp3",
-    "19 - Sorriso Maroto - Instigante - Ao Vivo.mp3",
-    "20 - Sorriso Maroto - Tá Bom, Aham_É Nóis Faze Parapapá_A Galera - Ao Vivo.mp3",
-    "21 - Sorriso Maroto - Ainda Existe Amor Em Nós.mp3",
-    "22 - Sorriso Maroto - Eu Já Te Quis um Dia.mp3",
-    "23 - Sorriso Maroto - Assim Você Mata o Papai - Ao Vivo.mp3",
-    "24 - Sorriso Maroto - Pot-Pourri_ Amanhã_O Que Tinha Que Dar - Ao Vivo.mp3",
-    "25 - Sorriso Maroto - Ainda Gosto de Você_Me Espera_Coração Deserto.mp3",
-    "26 - Sorriso Maroto - Indiferença - Ao Vivo.mp3",
-    "27 - Sorriso Maroto - Pouco a Pouco - Ao Vivo.mp3",
-    "28 - Sorriso Maroto - Pot-Pourri_ Em Suas Mãos_Disfarça_Fica Combinado Assim - Ao Vivo.mp3",
-    "29 - Sorriso Maroto - Me Arrependi_É Natural_O Impossível - Ao Vivo.mp3",
-    "30 - Sorriso Maroto - Pot-Pourri_ Tenho Medo_Não Tem Perdão - Ao Vivo.mp3",
-    "31 - Sorriso Maroto - Pot-Pourri_ Pra Mim Não É_Se Eu Te Pego Te Envergo_Instigante - Ao Vivo.mp3",
-    "32 - Sorriso Maroto - Já Era.mp3",
-    "33 - Sorriso Maroto - Engano.mp3",
-    "34 - Sorriso Maroto - Estrela Maior.mp3",
-    "35 - Sorriso Maroto - É Diferente.mp3",
-    "36 - Sorriso Maroto - Na Cama - Live.mp3",
-    "37 - Sorriso Maroto - Loucura Do Seu Coração - Live.mp3",
-    "38 - Sorriso Maroto - Boa Noite_Por Quê - Live.mp3",
-    "39 - Sorriso Maroto - Se Eu Te Pego Te Envergo - Ao Vivo.mp3",
-    "40 - Sorriso Maroto - Sinal Vital - Ao Vivo.mp3",
-    "41 - Sorriso Maroto - Escondido dos seus Pais - Ao Vivo.mp3"
+    "the_scientist.mp3"
 ]
 
 
 # Substitua com os nomes reais das suas músicas
 musica_index = 0
-caminho_musica = os.path.join(caminho_usuario, 'Área de Trabalho', 'Projetos', 'Contador_Maria', 'aplicativo_desktop', 'music', musicas[musica_index])
+caminho_musica = os.path.join(caminho_usuario, 'Documents', 'GitHub', 'Contador_Ana', 'aplicativo_desktop', 'music', musicas[musica_index])
 
 # Define a target date for the countdown
-data_alvo = datetime.datetime(2023, 9, 7)
+data_alvo = datetime.datetime(2024, 7, 6)
 
 def calcular_tempo_restante():
     tempo_atual = datetime.datetime.now()
@@ -76,7 +35,7 @@ def atualizar_contagem_regressiva(label_detalhada):
         horas, remainder = divmod(remainder, 3600)
         minutos, segundos = divmod(remainder, 60)
 
-        mensagem_detalhada = "Faltam {} dias, {} horas, {} minutos e {} segundos, meu Pãozinho de Mel 🍯".format(dias, horas, minutos, segundos)
+        mensagem_detalhada = "Faltam {} dias, {} horas, {} minutos e {} segundos, minha querida Ana 💙".format(dias, horas, minutos, segundos)
         label_detalhada.config(text=mensagem_detalhada)
 
     label_detalhada.after(1000, lambda: atualizar_contagem_regressiva(label_detalhada))
@@ -90,13 +49,13 @@ def pause_music():
 def next_song():
     global musica_index
     musica_index = (musica_index + 1) % len(musicas)
-    pygame.mixer.music.load(os.path.join(caminho_usuario, 'Área de Trabalho', 'Projetos', 'Contador_Maria', 'aplicativo_desktop', 'music', musicas[musica_index]))
+    pygame.mixer.music.load(os.path.join(caminho_usuario, 'Documents', 'GitHub', 'Contador_Ana', 'aplicativo_desktop', 'music', musicas[musica_index]))
     pygame.mixer.music.play()
 
 def prev_song():
     global musica_index
     musica_index = (musica_index - 1) % len(musicas)
-    pygame.mixer.music.load(os.path.join(caminho_usuario, 'Área de Trabalho', 'Projetos', 'Contador_Maria', 'aplicativo_desktop', 'music', musicas[musica_index]))
+    pygame.mixer.music.load(os.path.join(caminho_usuario, 'Documents', 'GitHub', 'Contador_Ana', 'aplicativo_desktop', 'music', musicas[musica_index]))
     pygame.mixer.music.play()
     
 def atualizar_nome_musica(label_musica):
